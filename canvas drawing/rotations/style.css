@@ -1,0 +1,17 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: sans-serif;
+}
+
+
+#my-canvas{
+	background-color: #333;
+	background-color: #fff;
+}
