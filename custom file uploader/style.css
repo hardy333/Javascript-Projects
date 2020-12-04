@@ -1,0 +1,35 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: sans-serif;
+}
+
+
+#custom-button{
+    padding:10px;
+    color:#fff;
+    background-color: #009578;
+    border:1px solid #000;
+    border-radius:5px;
+    cursor:pointer;
+
+
+}
+#custom-button:hover{
+    filter:brightness(120%);
+}
+
+#custom-text{
+    margin-left:10px;
+    color:#aaa;
+}
+
+#real-file{
+    display:none;
+}
