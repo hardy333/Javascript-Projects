@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #34495e;
+    color:#fff;
+}
+h1{
+    text-align:center;
+    margin:2rem 0;
+    font-size:2.5rem;
+}
+.accordion{
+    width:90%;
+    max-width:1000px;
+    margin:2rem auto;
+
+}
+.accordion-item{
+    background-color: #fff;
+    color:#111;
+    margin:1rem 0;
+    border-radius:0.5rem;
+    box-shadow: 0px 2px 5px 0 rgba(0,0,0, 0.25);
+}
+.accordion-item-header{
+    padding:0.5rem 3rem 0.5rem 1rem;
+    min-height:3.5rem;
+    line-height:1.25;
+    font-weight:bold;
+    display:flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+}
+.accordion-item-header::after{
+    content: "\002B";
+    font-size:2rem;
+    position:absolute;
+    right:1rem;
+
+}
+.accordion-item-header.active::after{
+    content: "\2212";
+}
+/* accordion body styles --start-- */
+.accordion-item-body{
+    max-height:0rem;
+    overflow:hidden;
+    transition:max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content{
+    padding:1rem;
+    line-height:1.5rem;
+    border-top:4px solid;
+
+    border-image:linear-gradient(to right, red, yellow ) 1;
+
+}
+.accordion-item-header.active + .accordion-item-body{
+    /* max-height:200px; */
+}
+
+
+@media (max-width:700px){
+    /* yvelafris zoma dayenebulia rem -shi amito html shi shecvla rem is iwvevs yvelafris zomis shecvlas */ 
+    html{
+        font-size:14px;
+    }
+    
+}
+
+/*******   + sign transfor to - sign **********/
+.container{
+    background-color: rgb(236, 70, 4);
+    height:300px;
+    width:80%;
+    margin:20px auto;
+    border-radius:5px;
+    box-shadow:0px 0px 5px 2px rgba(0,0,0,0.3);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-container{
+    height:50px;
+    width:50px;
+    margin:0px;
+    padding:0px;
+    background-color: #fff;
+    display: flex;
+    flex-direction:column;
+    /* position:relative; */
+    justify-content: center;
+
+}
+.box{
+    height:4px;
+    width:80%;
+    margin:0 auto;
+    background-color: #000;
+    /* position:absolute; */
+    /* top:50%;
+    left:50%; */
+    /* transform:translate(-50%, -50%); */
+
+}
+.box-1{
+}
+.box-2{
+    transform:translate(0px, -4px);
+    transition:transform 0.1s linear;
+
+}
+.sign-container:hover .box-2{
+    transform:rotate(90deg) translate(-2px, 0px);
+    /* transform:translate(0, -4px); */
+}
