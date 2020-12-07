@@ -1,0 +1,44 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: sans-serif;
+}
+h1.booklist-header{
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+.book-table{
+    max-height:300px;
+    overflow-y:hidden;
+}
+@media (max-width:500px){
+    h1.booklist-header{
+        font-size: 20px;
+    }
+}
+
+.table-wrapper::after{
+    content:"";
+    display:inline-block;
+    height:28px;
+    width:50px;
+    background-color: lightgray;
+    position:absolute;
+    top:0px;
+    left:50%;
+    border-radius:10px;s
+    transform:translate(-50%, -50%);
+    
+
+}
+.table-wrapper.scrollable{
+    max-height:500px;
+    overflow-y:scroll;
+}
