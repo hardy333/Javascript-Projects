@@ -1,0 +1,38 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    font-family: sans-serif;
+}
+p{
+    padding:20px 40px;
+}
+
+.container{
+    padding:20px;
+}
+button{
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:3px;
+    border:1px solid black;
+}
+input{
+    outline:none;
+    border-radius:3px;
+    padding:5px 10px;
+    border:1px solid black;
+}
+
+.show-error{
+    border:1px solid red;
+}
+.show-error:focus{
+    border:1px solid red;
+    outline:none;
+}
