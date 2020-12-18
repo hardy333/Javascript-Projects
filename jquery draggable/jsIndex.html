@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        .draggable{
+            width:200px;
+            height:200px;
+            background-color: gray;
+            border:1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dropable{
+            width:200px;
+            height:200px;
+            border:1px solid black;
+
+            position:absolute;
+            top:210px;
+            left:400px;
+        }
+
+        .drop-p{
+            background-color: red;
+            padding:20px;
+            height:400px;
+        }
+        .invisable{
+            opacity:0;
+        }
+        .dragable-container{
+            width:230px;
+            height:230px;
+            background-color: brown;
+            border:5px solid black;
+            padding:10px;
+        }
+        */
+
+
+        *{
+            box-sizing: border-box;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            height:200px;
+        }
+
+        .container{
+
+            width:90%;
+            margin:auto;
+            background-color: #555;
+            min-height:400px;
+
+            border:2px solid black;
+            box-shadow:0px 0px 5px rgba(0,0,0,0.9);
+            border-radius:5px;
+            position:relative;
+            margin-top:30px;
+            margin-left:30px;
+
+
+        }
+
+        .box{
+            width:100px;
+            height:100px;
+            background-color: lightgreen;
+            border-radius:3px;
+            border:1px solid black;
+            display:inline-block;
+            position:absolute;
+           
+        }
+        .outer-box{
+          width: 150px;
+          height:150px;
+          display:inline-block;
+          margin:10px;
+          background-color: yellow;
+          border:2px solid black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .invisible{
+            opacity:0;
+        }
+    </style>
+</head>
+<body >
+    <!-- <button onclick="goToIndex()">index.html</button> -->
+
+
+    <!-- <div class="dragable-container">
+        <div class="draggable" draggable="true">
+            Hello There
+        </div>
+    </div>
+    <div class="drop-p"  >
+    </div> -->
+
+    <div class="container">
+        <div class="outer-box">
+            <div class="box"  draggable="true">
+                    
+            </div>
+        </div>
+        <div class="outer-box">
+            
+        </div>
+    </div>
+
+
+
+    
+
+    <script>
+
+        function goToIndex(){
+            window.location.href = "index.html";
+        }
+
+        const outerBox = document.querySelectorAll(".outer-box");
+        const box = document.querySelector(".box");
+        const container = document.querySelector(".container");
+        let rect = container.getBoundingClientRect();
+
+        let x,y;
+
+        console.log(rect);
+
+        window.addEventListener("resize", () => {
+            rect = container.getBoundingClientRect();
+            console.log(rect);
+
+            // console.log(document.documentElement.clientHeight);
+
+
+        })
+        container.addEventListener("click", (e) => {
+            console.log(e.x);
+            console.log(e.y);
+        })
+
+        box.addEventListener("dragstart", dragStart);
+        box.addEventListener("dragend", dragEnd);
+        function dragStart(){
+            console.log("drag start");
+        }
+        function dragEnd(){
+            console.log("drag end");
+        }
+
+
+
+        /*
+        const d = document.querySelector(".draggable");
+        const p = document.querySelector(".drop-p");
+        const dContainer = document.querySelector(".dragable-container");
+
+        d.addEventListener("dragstart", () => {
+            console.log("div drag start");
+            setTimeout(() => {
+                d.classList.add("invisable");
+            }, 0);
+        })
+        d.addEventListener("dragend", () => {
+            console.log("div drag end");
+            d.classList.remove("invisable");
+
+        })
+        d.addEventListener("dragover", () => {
+            console.log("div drag over");
+        })
+        d.addEventListener("dragenter", () => {
+            console.log("div drag enter");
+        })
+        d.addEventListener("dragleave", () => {
+            console.log("div drag leave");
+        })
+        // d.addEventListener("drop", () => {
+        //     console.log("div drop");
+        //     d.classList.remove("invisable");
+
+        // })
+
+
+        // p.addEventListener("dragstart", () => {
+        //     console.log("p drag start");
+        // })
+        // p.addEventListener("dragend", () => {
+        //     console.log("p drag end");
+        // })
+        p.addEventListener("dragover", (e) => {
+            // e.preventDefault();
+            console.log("p drag over");
+        })
+        p.addEventListener("dragenter", () => {
+            console.log("p drag enter");
+        })
+        p.addEventListener("dragleave", () => {
+            console.log("p drag leave");
+        })
+        p.addEventListener("drop", dragDrop);
+
+        function dragDrop(){
+            console.log("p drop ");
+            console.log(this);
+            this.append(d);
+        }
+
+        dContainer.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            console.log("continaer drag over");
+        })
+        dContainer.addEventListener("dragenter", () => {
+            console.log("c drag enter");
+        })
+        dContainer.addEventListener("dragleave", () => {
+            console.log("c drag leave");
+        })
+        dContainer.addEventListener("drop", dragDrop);
+
+        function dragDrop(){
+            console.log("c drop");
+            console.log(this);
+            this.append(d);
+        }
+
+
+        */
+
+       
+       
+
+
+
+
+</script>
+</body>
+</html>
