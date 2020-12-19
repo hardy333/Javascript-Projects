@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to the new blog",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, omnis asperiores labore similique odio cum assumenda saepe laborum consectetur! Quo, dolorem. Itaque explicabo quia ipsa illum provident quasi nulla doloremque magnam pariatur fuga dolorum, commodi excepturi laborum. Alias, odio nobis?",
+      "likes": 3
+    },
+    {
+      "id": 2,
+      "title": "How to be The net ninja",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, omnis asperiores labore similique odio cum assumenda saepe laborum consectetur! Quo, dolorem. Itaque explicabo quia ipsa illum provident quasi nulla doloremque magnam pariatur fuga dolorum, commodi excepturi laborum. Alias, odio nobis?",
+      "likes": 30
+    },
+    {
+      "id": 3,
+      "title": "New course is coming soon!",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, omnis asperiores labore similique odio cum assumenda saepe laborum consectetur! Quo, dolorem. Itaque explicabo quia ipsa illum provident quasi nulla doloremque magnam pariatur fuga dolorum, commodi excepturi laborum. Alias, odio nobis?",
+      "likes": 20
+    }
+  ],
+  "pools": [
+    {
+      "id": 1,
+      "question": "What is your name ? ",
+      "answerA": "Vue",
+      "answerB": "React"
+    }
+  ]
+}
