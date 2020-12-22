@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+            <li>
+                <span><input type="checkbox"></span>
+                <span>dlksdj</span>
+            </li>
+        </ul>
+    </div>
+    <div class="eyeContainer">
+        <div class="eye"></div>
+    </div>
+    <style>
+        .eyeContainer{
+            width:200px;
+            height:200px;
+            background-color: green;
+            position:relative;
+            
+            border-radius:100%;
+        }
+        .eye{
+            width:50px;
+            height:50px;
+            background-color:black;
+            border-radius: 100%;
+            position:absolute;
+            bottom:0;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        const eyeContainer = document.querySelector(".eyeContainer");
+      
+
+        const box = eyeContainer.getBoundingClientRect();
+    
+        const center = {
+            x: box.x + box.width / 2,
+            y: box.y + box.height / 2,
+        }
+
+        window.addEventListener("mousemove",(e) => {
+
+            const radian = Math.atan2(e.x - center.x, e.y - center.y);
+            const deg = ( radian * 180 / Math.PI )* ( -1 );
+            eyeContainer.style.transform = `rotate(${deg}deg)`;
+
+        })
+        addEventListener("click", (e) => {
+            console.log(e);
+        })
+    </script>
+
+    <script>
+        const checkboxes = document.querySelectorAll(".container input[type='checkbox']");
+
+        checkboxes.forEach(checkbox => checkbox.addEventListener("click", handleCheck));
+        
+        let lastChecked;
+
+        function handleCheck(e) {
+
+            
+            // console.log(e.ctrlKey);
+            if(e.ctrlKey && this.checked){
+                let inBetween = false;
+
+
+                checkboxes.forEach(checkbox =>{
+                    if(checkbox === lastChecked || checkbox === this){
+                        inBetween = !inBetween;
+                    }
+
+                    if(inBetween){
+                        checkbox.checked = true;
+
+                    }
+                })
+
+                
+            }
+            lastChecked = this;
+        }
+
+    </script>
+
+    <script  type="module" src="main.js"></script>
+    
+</body>
+</html>
