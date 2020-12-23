@@ -1,0 +1,140 @@
+
+// $bg-theme-dark:#222;
+// $bg-theme-dark1:#333;
+// $color-theme-dark:#fff;
+
+// $bg-theme-light:#fff;
+// $bg-theme-light1:#eaeaea;
+// $color-theme-light:#222;
+body{
+    $bg-theme-dark:#222;
+    $bg-theme-dark1:#333;
+    $color-theme-dark:#fff;
+
+}
+body.dark{
+    $bg-theme-dark:#fff;
+    $bg-theme-dark1:#eaeaea;
+    $color-theme-dark:#222;
+
+
+
+
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.body{
+    width:100%;
+    min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.container{
+    width:90%;
+    margin:auto;
+}
+a{
+    text-decoration:none;
+    color:#fff;
+}
+ul{
+    list-style:none;
+}
+
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+nav{
+    height:5rem;
+    background-color: $bg-theme-dark;
+    color:$color-theme-dark;
+}
+nav .container{
+    height:100%;
+}
+nav .wrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+
+}
+
+nav .logo a{
+    color:#222;
+    font-size:30px;
+    font-weight:600;
+    color:$color-theme-dark;
+
+   
+}
+nav .navbar{
+    width:50%;
+    height:100%;
+
+}
+
+nav .navbar ul{
+    width:100%;
+    list-style:none;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:1.2rem;
+    li{
+        cursor:pointer;
+    }
+    height:100%;
+
+
+}
+.theme-switcher-outer{
+    display:inline-block;
+    width:50px;
+    background-color: gray;
+    height:20px;
+    border-radius:20px;
+    .theme-switcher-inner{
+        display:inline-block;
+        height:100%;
+        width:50%;
+        background-color: rgb(204, 42, 42);
+        border-radius:20px;
+        transition:transform 0.1s ease-in-out;
+    }
+}
+
+//////////////////////////////////////
+
+section.hero{
+    width:100%;
+    padding:40px 0px;
+    background-color: $bg-theme-dark1;
+    color:$color-theme-dark;
+    h1{
+        text-align:center;
+        background-color: $bg-theme-dark;
+        width:50%;
+        margin:auto;
+        margin-bottom:20px;
+        padding:20px 0px;
+        border-radius:5px;
+    }
+    p{
+        text-align:center;
+        background-color: $bg-theme-dark;
+        padding:20px 10px;
+        border-radius:5px;
+        font-size:1.2rem;
+    }
+
+}
+
+
