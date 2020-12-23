@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	    <script src="https://kit.fontawesome.com/e44b1d70e7.js" crossorigin="anonymous"></script>
+
+	    <!-- <script src="https://kit.fontawesome.com/e44b1d70e7.js" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+		<div class="slider-app">
+			<div class="slider-container">
+				<div class="img-box-container">
+					<div class="img-box active">
+						<img src="img (1).jpg" alt="" />
+					</div>
+					<div class="img-box">
+						<img src="img (2).jpg"  alt="" />
+					</div>
+					<div class="img-box">
+						<img src="img (3).jpg" alt="" />
+					</div>
+					<div class="img-box">
+						<img src="img (4).jpg"  alt="" />
+					</div>
+					<div class="img-box">
+						<img src="img (5).jpg"  alt="" />
+					</div>
+				</div>
+				<button id="next-btn" onclick="showNextImg()"> 
+					<i class="fas fa-arrow-right"></i>
+				</button>
+				<button id="prev-btn" onclick="showPrevImg()">
+					<i class="fas fa-arrow-left"></i>
+				</button>
+
+				<div class="dot-container">
+					<div class="dot dot1 active" data-index="0"></div>
+					<div class="dot dot1" data-index="1"></div>
+					<div class="dot dot1" data-index="2"></div>
+					<div class="dot dot1" data-index="3"></div>
+					<div class="dot dot1" data-index="4"></div>
+				</div>
+			</div>
+		<div>
+
+
+	<script type="text/javascript">
+		const imgBoxes = document.querySelectorAll(".img-box");
+		const dots = document.querySelectorAll(".dot");
+		let interval;
+		let auto = true;
+		const slideTimer = 5000;
+		let index = 0;
+
+
+		dots.forEach(dot => {
+			dot.addEventListener("click", () => {
+				clearInterval(interval);
+				index = Number(dot.dataset.index);
+				console.log(index);
+
+				// change active image
+				imgBoxes.forEach((imgBox) => imgBox.classList.remove('active'));
+				imgBoxes[index].classList.add('active');
+
+				//change active dot 
+				dots.forEach((dot) => dot.classList.remove("active"));
+				dots[index].classList.add("active");
+
+				// restart Interval 
+				interval = setInterval(() => {
+					showNextImg()
+				},slideTimer)
+
+			})
+		})
+
+
+		const showNextImg = () => {
+			clearInterval(interval);
+
+			if (index >= 4) {
+				index = 0;
+			} else {
+				index++;
+			}
+
+			// change active image
+			imgBoxes.forEach((imgBox) => imgBox.classList.remove('active'));
+			imgBoxes[index].classList.add('active');
+
+			//change active dot 
+			dots.forEach((dot) => dot.classList.remove("active"));
+			dots[index].classList.add("active");
+
+
+
+			// restart Interval 
+			interval = setInterval(() => {
+				showNextImg()
+			},slideTimer)
+			
+
+		};
+
+		const showPrevImg = () => {
+			clearInterval(interval);
+
+			if (index <= 1) {
+				index = 4;
+			} else {
+				index--;
+			}
+
+			//
+			imgBoxes.forEach((imgBox) => imgBox.classList.remove('active'));
+			imgBoxes[index].classList.add('active');
+
+			//change active dot 
+			dots.forEach((dot) => dot.classList.remove("active"));
+			dots[index].classList.add("active");
+
+
+
+			interval = setInterval(() => {
+				showNextImg()
+			},slideTimer)
+		};
+
+
+
+		if(auto){
+			interval = setInterval(() => {
+				showNextImg()
+			},slideTimer)
+
+		}
+		
+		
+	</script>
+</body>
+</html>
