@@ -1,0 +1,3 @@
+Thi smethod only works with images which is in your computer in server files ,
+because in process you need to use canvas.toDataURL()  which doesnot works images with https://.... 
+links 
